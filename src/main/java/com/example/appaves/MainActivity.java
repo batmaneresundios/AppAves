@@ -1,22 +1,20 @@
-package com.example.myapplication;
+package com.example.appaves;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
+
 //Extends hereda lo que está al lado derecho. Cuando se utiliza implements cuando se hereda una clase, se toma el contenido de la clase y obligadamente se implementa
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     //Variables globales (Objetos de JAVA)
-    EditText edtEdad;
-    EditText edtPesoActual;
-    Button btnCalcular;
-    TextView txvResultado, txvEstadoPeso;
-    Spinner spiRegion;
+    Button btnInformacion;
+    Spinner spiRegion,spiComuna;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,58 +25,46 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         vincularElementos();
         //Invocamos método para activar listener
         activarListener();
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.lista_regiones, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spiRegion.setAdapter(adapter);
+        btnInformacion.setOnClickListener(this);
+
+    }
+    @Override
+    public void onClick(View view) {
+        // Agrega aquí la lógica que deseas ejecutar cuando se haga clic en un elemento
+        if (view == btnInformacion) {
+            // Código para el botón de información
+        } else if (view == btnInformacion) {
+            // Código para otro botón (si tienes más botones)
+        }
     }
 
+
     private void activarListener() {
-        btnCalcular.setOnClickListener(this);
+        btnInformacion.setOnClickListener(this);
+        spiRegion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                // Aquí puedes ejecutar código cuando se selecciona un elemento en el Spinner
+                String selectedRegion = parentView.getItemAtPosition(position).toString();
+                // Hacer algo con la región seleccionada
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // Cuando no se selecciona ningún elemento
+            }
+        });
+        // Activa el listener para otros elementos aquí si los tienes.
     }
 
     private void vincularElementos() {
-        edtEdad = (EditText) findViewById(R.id.edt_edad);
-        edtPesoActual = (EditText) findViewById(R.id.edt_peso_actual);
-        txvResultado = (TextView) findViewById(R.id.txt_resultado);
-        btnCalcular = (Button) findViewById(R.id.btn_calcular);
-        txvEstadoPeso = (TextView) findViewById(R.id.txt_estado_peso);
+        btnInformacion = (Button) findViewById(R.id.btn_informacion);
+        spiRegion = findViewById(R.id.spinner_region);
+        spiComuna = findViewById(R.id.spinner_comuna);
     }
     //Toda caja de texto en java por defecto es String
-    @Override
-    public void onClick(View view) {
-        int edad = Integer.parseInt(edtEdad.getText().toString());
-        if(edad>=1 && edad <= 10) {
-            //Obtener peso actual
-            int pesoActual = Integer.parseInt(edtPesoActual.getText().toString());
-            // calcularPesoIdeal(edad);
-            Intent intentoResultado = new Intent(MainActivity.this,ResultadoActivity.class);
-            //Agregamos datos al envio mediante intento
-            intentoResultado.putExtra("p_edad",edad);
-            intentoResultado.putExtra("p_peso_actual", pesoActual);
-            startActivity(intentoResultado);
-        }else{
-            mostrarErrorIngreso();
-        }
-    }
-    private void mostrarErrorIngreso(){
-        txvResultado.setText("Edad requerida entre 1 y 10");
-    }
 
-    private void calcularPesoIdeal(int edad) {
-        int pesoIdeal = edad * 2 + 8;
-        txvResultado.setText("Su peso ideal es: " + pesoIdeal);
-        //Obtener el peso acual
-        int pesoActual = Integer.parseInt(edtPesoActual.getText().toString());
-        determinarEstadoPeso(pesoActual,pesoIdeal);
-    }
-    private void determinarEstadoPeso(int pesoActual,int pesoIdeal){
-        String estadoPeso;
-        if(pesoActual == pesoIdeal){
-            estadoPeso = "Peso ideal";
-        }else{
-            if(pesoActual > pesoIdeal){
-                estadoPeso = "Sobrepeso";
-            }else{
-                estadoPeso = "Bajo peso";
-            }
-        }
-        txvEstadoPeso.setText("Estado de peso: "+estadoPeso);
-    }
 }

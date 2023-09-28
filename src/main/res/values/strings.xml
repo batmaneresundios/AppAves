@@ -1,15 +1,18 @@
 <resources>
+    <string name="app_name">Nombre de tu Aplicación</string>
 
-    <string-array name="region">
+    <string name="str_informacion">Informacion</string>
+    <string name="str_registro">Registro</string>
+    <string-array name="lista_regiones">
+
         <item>Arica Parinacota</item>
         <item>Tarapaca</item>
-        <item>Antofagasta</item>
         <item>Atacama</item>
         <item>Antofagasta</item>
         <item>Coquimbo</item>
         <item>Valparaiso</item>
         <item>Metropolitana</item>
-        <item>O'higins</item>
+        <item>Ohiggins</item>
         <item>Maule</item>
         <item>Ñuble</item>
         <item>Araucania</item>
