@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="str_titulo_inicial">Calcular peso</string>
+    <string name="str_edad">Ingrese edad</string>
+    <string name="str_peso_actual">Ingrese peso actual (kg)</string>
+    <string name="str_boton_calcular">Calcular</string>
+    <string-array name="region">
+        <item>Arica Parinacota</item>
+        <item>Tarapaca</item>
+        <item>Antofagasta</item>
+        <item>Atacama</item>
+        <item>Antofagasta</item>
+        <item>Coquimbo</item>
+        <item>Valparaiso</item>
+        <item>Metropolitana</item>
+        <item>O'higgins</item>
+        <item>Maule</item>
+        <item>Ñuble</item>
+        <item>Araucania</item>
+        <item>Los Rios</item>
+        <item>Los Lagos</item>
+        <item>Aysen</item>
+        <item>Magallanes</item>
+    </string-array>
+</resources>

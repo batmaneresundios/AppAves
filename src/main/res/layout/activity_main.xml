@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:padding="10dp">
+
+
+    <ImageView
+        android:src="@drawable/logo128x128"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="38dp"
+        android:layout_marginBottom="38dp"
+        android:layout_height="wrap_content"></ImageView>
+
+
+
+    <TextView
+        android:id="@+id/txv_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_titulo_inicial"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="18dp"/>
+
+    <Spinner
+        android:id="@+id/spinner_region"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"/>
+    <Spinner
+        android:id="@+id/spinner_comuna"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"/>
+
+    <EditText
+        android:id="@+id/edt_edad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/str_edad"
+        android:inputType="number">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/edt_peso_actual"
+        android:hint="@string/str_peso_actual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number">
+    </EditText>
+
+    <Button
+        android:id="@+id/btn_calcular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/str_boton_calcular"
+        ></Button>
+    <TextView
+        android:id="@+id/txt_resultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ></TextView>
+
+
+
+
+
+</LinearLayout>
