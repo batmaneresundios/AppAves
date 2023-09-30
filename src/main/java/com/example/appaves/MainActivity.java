@@ -26,9 +26,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Invocamos método para activar listener
         activarListener();
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.lista_regiones, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.lista_comunas, android.R.layout.simple_spinner_item);
+
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spiRegion.setAdapter(adapter);
+        spiComuna.setAdapter(adapter1);
         btnInformacion.setOnClickListener(this);
 
     }
@@ -61,9 +65,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void vincularElementos() {
-        btnInformacion = (Button) findViewById(R.id.btn_informacion);
         spiRegion = findViewById(R.id.spinner_region);
         spiComuna = findViewById(R.id.spinner_comuna);
+    }
+
+    public void clickImagen(View view) {
+        Intent intent = new Intent(this, MainActivity2.class);
+        startActivity(intent);
     }
     //Toda caja de texto en java por defecto es String
 
