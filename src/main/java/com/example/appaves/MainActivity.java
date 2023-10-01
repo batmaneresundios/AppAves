@@ -7,20 +7,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
 
 //Extends hereda lo que está al lado derecho. Cuando se utiliza implements cuando se hereda una clase, se toma el contenido de la clase y obligadamente se implementa
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity{
     //Variables globales (Objetos de JAVA)
-    Button btnInformacion;
     Spinner spiRegion,spiComuna;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         //Invocamos método para vicncular elementos
         vincularElementos();
         //Invocamos método para activar listener
@@ -33,21 +30,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         spiRegion.setAdapter(adapter);
         spiComuna.setAdapter(adapter1);
-        btnInformacion.setOnClickListener(this);
     }
-    @Override
-    public void onClick(View view) {
-        // Agrega aquí la lógica que deseas ejecutar cuando se haga clic en un elemento
-        if (view == btnInformacion) {
-            // Código para el botón de información
-        } else if (view == btnInformacion) {
-            // Código para otro botón (si tienes más botones)
-        }
-    }
+
 
 
     private void activarListener() {
-        btnInformacion.setOnClickListener(this);
         spiRegion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 // Aquí puedes ejecutar código cuando se selecciona un elemento en el Spinner
