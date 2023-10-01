@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         spiRegion.setAdapter(adapter);
         spiComuna.setAdapter(adapter1);
         btnInformacion.setOnClickListener(this);
-
     }
     @Override
     public void onClick(View view) {

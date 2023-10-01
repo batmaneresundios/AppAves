@@ -1,12 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".MainActivity2">
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:padding="50dp">
 
+    <ImageView
+        android:src="@drawable/logo128x128"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="38dp"
+        android:layout_marginBottom="38dp"
+        android:layout_height="wrap_content"></ImageView>
 
+    <TextView
+        android:id="@+id/txv_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/bree_serif_regular"
+        android:text="Mi AveNote"
+        android:textSize="18dp"
+        android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/txv_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registro de Aves sencillo"
+        android:fontFamily="@font/josefin_sans"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:layout_marginBottom="36dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:id="@+id/imv_binocular"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/binocular128x128"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registro de aves"
+            android:fontFamily="@font/josefin_sans"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:id="@+id/imv_notepad"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/note128x128"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/josefin_sans"
+            android:text="Informacion de aves"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
 </LinearLayout>
