@@ -1,4 +1,7 @@
 <resources>
+    <string name="first_fragment_label">Etiqueta del primer fragmento</string>
+    <string name="second_fragment_label">Etiqueta del segundo fragmento</string>
+
     <string name="app_name">Aves app</string>
     <string name="str_informacion">Informacion</string>
     <string name="str_registro">Registro</string>
@@ -9,12 +12,5 @@
         <item>Victoria</item>
     </string-array>
     <string name="title_activity_main2">MainActivity2</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-    <string name="aguila">Águila Chilena:
-                            Mide de 70 a 90 cms. de largo. Se caracteriza por tener las alas anchas y la cola corta y ancha. Se alimentan de pequeñas aves, liebres y serpientes, que cazan tras acecharlas desde montañas y colinas. Anidan en árboles altos o en rocosidades.</string>
 
 </resources>

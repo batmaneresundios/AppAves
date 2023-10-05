@@ -10,16 +10,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 import android.view.ViewStub;
+import android.widget.ImageView;
 
-import androidx.core.view.WindowCompat;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
-import com.example.appaves.databinding.ActivityMain2Binding;
-
-public class MainActivity2 extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity2 extends AppCompatActivity{
     Intent intento;
 
     @Override
@@ -33,13 +27,9 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
         //Asociamos el intento al proceso de recepcion desde MainActivity
         intento = getIntent();
     }
-    public void onImageClick(View view) {
-        // Lógica para manejar el clic en la imagen aquí
-    }
 
-
-    @Override
-    public void onClick(View view) {
-
+    public void clickRegistro(View view) {
+        Intent intent = new Intent(this, Registro.class);
+        startActivity(intent);
     }
 }

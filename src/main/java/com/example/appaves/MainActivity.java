@@ -32,8 +32,6 @@ public class MainActivity extends AppCompatActivity{
         spiComuna.setAdapter(adapter1);
     }
 
-
-
     private void activarListener() {
         spiRegion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
@@ -41,7 +39,6 @@ public class MainActivity extends AppCompatActivity{
                 String selectedRegion = parentView.getItemAtPosition(position).toString();
                 // Hacer algo con la región seleccionada
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
                 // Cuando no se selecciona ningún elemento

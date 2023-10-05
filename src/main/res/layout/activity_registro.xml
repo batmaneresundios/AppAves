@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registro">
+
+    <ImageView
+        android:id="@+id/img_registro"
+        android:src="@drawable/note128x128"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:layout_marginBottom="38dp" />
+
+    <TextView
+        android:id="@+id/txv_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registro de Aves"
+        android:textStyle="bold"
+        android:layout_marginTop="38dp"
+        android:layout_marginBottom="38dp"
+        android:textSize="30sp"
+        android:fontFamily="@font/bree_serif_regular"
+        android:layout_toEndOf="@id/img_registro"
+        android:layout_toRightOf="@id/img_registro"
+        android:layout_alignBaseline="@id/img_registro"/>
+
+    <TextView
+        android:id="@+id/txv_localidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_registro"
+        android:layout_alignBaseline="@id/img_registro"
+        android:layout_gravity="center"
+        android:layout_marginStart="-9dp"
+        android:layout_marginLeft="-9dp"
+        android:layout_toEndOf="@id/img_registro"
+        android:layout_toRightOf="@id/img_registro"
+        android:fontFamily="@font/bree_serif_regular"
+        android:text="Ingresa ave visualizada"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/txv_ave"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/img_registro"
+        android:layout_alignLeft="@id/img_registro"
+        android:layout_alignStart="@id/img_registro"
+        android:layout_marginTop="20dp"
+        android:hint="Ingrese la especie "
+        android:padding="8dp"/>
+
+    <TextView
+        android:id="@+id/txv_aves_vistas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txv_ave"
+        android:layout_alignStart="@id/txv_ave"
+        android:layout_alignLeft="@id/txv_ave"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="11dp"
+        android:fontFamily="@font/bree_serif_regular"
+        android:text="Ingresa numero de aves vistas"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/edt_aves_vistas"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Ingrese la cantidad"
+        android:layout_gravity="center"
+        android:layout_below="@id/txv_aves_vistas"
+        android:layout_alignLeft="@id/txv_ave"
+        android:layout_alignStart="@id/txv_ave"
+        android:layout_marginTop="8dp"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/txv_lugar_exacto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_aves_vistas"
+        android:layout_alignStart="@id/edt_aves_vistas"
+        android:layout_alignLeft="@id/edt_aves_vistas"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/bree_serif_regular"
+        android:text="Lugar exacto de la visualización:"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/edt_lugar_exacto"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Ingrese la localidad exacta"
+        android:layout_below="@id/txv_lugar_exacto"
+        android:layout_alignLeft="@id/edt_aves_vistas"
+        android:layout_alignStart="@id/edt_aves_vistas"
+        android:layout_marginTop="8dp"
+        android:inputType="text" />
+    <Button
+        android:id="@+id/btn_guardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar configuracion"
+        android:layout_below="@id/edt_lugar_exacto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+</RelativeLayout>
+
+
+
