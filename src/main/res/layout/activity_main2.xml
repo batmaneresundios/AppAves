@@ -24,7 +24,8 @@
         android:fontFamily="@font/bree_serif_regular"
         android:text="Mi AveNote"
         android:textSize="18dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="#77D353"/>
 
     <TextView
         android:id="@+id/txv_info"

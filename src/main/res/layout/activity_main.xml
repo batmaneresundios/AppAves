@@ -25,7 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:fontFamily="@font/bree_serif_regular"
-        android:text="App Registro de aves"
+        android:text="Mi AveNote"
+        android:textColor="#77D353"
         android:textSize="18dp"
         android:textStyle="bold" />
 
@@ -42,7 +43,9 @@
         android:id="@+id/txv_localidad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
         android:text="Ingresa tu localidad"
+        android:textColor="#487FBB"
         android:fontFamily="@font/bree_serif_regular"
         android:layout_gravity="center"
         android:textStyle="bold"

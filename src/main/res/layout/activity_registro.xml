@@ -111,7 +111,8 @@
         android:text="Guardar configuracion"
         android:layout_below="@id/edt_lugar_exacto"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#2471C5"/>
 </RelativeLayout>
 
 
