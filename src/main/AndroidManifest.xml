@@ -22,7 +22,7 @@
             android:name=".informacion"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".Menu"
             android:exported="false"
             android:label="@string/title_activity_main2"
             android:theme="@style/Theme.AppAves" />

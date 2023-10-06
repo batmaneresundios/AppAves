@@ -15,12 +15,12 @@ public class Registro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
         vincularElementos();
-
+        // Configura un listener para el botón btnGuardar
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Crear un intent para abrir MainActivity
-                Intent intent = new Intent(Registro.this, MainActivity2.class);
+                Intent intent = new Intent(Registro.this, Menu.class);
 
                 // Iniciar MainActivity
                 startActivity(intent);
