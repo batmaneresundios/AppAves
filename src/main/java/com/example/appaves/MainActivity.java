@@ -8,11 +8,17 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 //Extends hereda lo que está al lado derecho. Cuando se utiliza implements cuando se hereda una clase, se toma el contenido de la clase y obligadamente se implementa
 public class MainActivity extends AppCompatActivity{
     //Variables globales (Objetos de JAVA)
+    TextView txtUser;
     Spinner spiRegion,spiComuna;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +26,7 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         vincularElementos();
         activarListener();
+        mostrarUsuario();
         // Se crean adaptadores para los Spinners a partir de recursos de cadenas.
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.lista_regiones, android.R.layout.simple_spinner_item);
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.lista_comunas, android.R.layout.simple_spinner_item);
@@ -28,6 +35,12 @@ public class MainActivity extends AppCompatActivity{
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spiRegion.setAdapter(adapter);
         spiComuna.setAdapter(adapter1);
+    }
+
+    private void mostrarUsuario() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        txtUser.setText("Bienvenido " + user.getEmail());
+
     }
 
     private void activarListener() {
@@ -42,12 +55,13 @@ public class MainActivity extends AppCompatActivity{
     }
 
     private void vincularElementos() {
+        txtUser = (TextView) findViewById(R.id.txt_user);
         spiRegion = findViewById(R.id.spinner_region);
         spiComuna = findViewById(R.id.spinner_comuna);
     }
 
     public void clickImagen(View view) { // Método llamado clickImagen cuando se hace clic en una imagen.
-        Intent intent = new Intent(this, Menu.class);// Crea un nuevo Intent para abrir la actividad MainActivity2.
+        Intent intent = new Intent(this, Menu.class);// Crea un nuevo Intent para abrir la actividad Menu.
         startActivity(intent);
     }
 }

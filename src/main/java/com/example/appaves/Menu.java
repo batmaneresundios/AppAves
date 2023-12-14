@@ -7,6 +7,10 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class Menu extends AppCompatActivity{
@@ -22,10 +26,15 @@ public class Menu extends AppCompatActivity{
     private void obtenerDatos() {
         //Asociamos el intento al proceso de recepcion desde MainActivity
         intento = getIntent(); // Obtiene el Intent enviado desde la actividad anterior (MainActivity)
+
     }
 
     public void clickRegistro(View view) { // Método llamado clickRegistro cuando se hace clic en un elemento de la vista.
         Intent intent = new Intent(this, Registro.class); // Crea un nuevo Intent para abrir la actividad Registro.
+        startActivity(intent); // se inicia la actividad Registro.
+    }
+    public void clickActualizar (View view) { // Método llamado clickRegistro cuando se hace clic en un elemento de la vista.
+        Intent intent = new Intent(this, ListaActivity.class); // Crea un nuevo Intent para abrir la actividad ListaActivity.
         startActivity(intent); // se inicia la actividad Registro.
     }
 }

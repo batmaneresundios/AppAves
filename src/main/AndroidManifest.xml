@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -13,22 +15,28 @@
         android:theme="@style/Theme.AppAves"
         tools:targetApi="31">
         <activity
+            android:name=".ListaActivity"
+            android:exported="false" />
+        <activity
             android:name=".Registro"
             android:exported="false" />
-        <activity
-            android:name=".galeria"
-            android:exported="false" />
-        <activity
-            android:name=".informacion"
-            android:exported="false" />
+
         <activity
             android:name=".Menu"
-            android:exported="false"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.AppAves" />
+            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+            <!-- No necesita un intent-filter aquí -->
+        </activity>
+
+        <activity
+            android:name=".LogInActivity"
+            android:exported="true"> <!-- Cambiado a true para que pueda ser lanzado -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,5 +44,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
