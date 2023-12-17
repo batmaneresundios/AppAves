@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.example.appaves"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.appaves"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -35,12 +35,14 @@ android {
 dependencies {
 
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.9.0")
+    implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("androidx.navigation:navigation-fragment:2.5.3")
-    implementation("androidx.navigation:navigation-ui:2.5.3")
+    implementation("androidx.navigation:navigation-fragment:2.7.5")
+    implementation("androidx.navigation:navigation-ui:2.7.5")
+    implementation("com.onesignal:OneSignal:[5.0.0, 5.99.99]")
     //Implementación de Firebase
-    implementation ("com.google.firebase:firebase-bom:32.7.0")
+    //noinspection BomWithoutPlatform
+    implementation ("com.google.firebase:firebase-bom:32.3.1")
     //Implementación FirebaseUI
     implementation ("com.firebaseui:firebase-ui-auth:7.2.0")
     implementation("com.google.firebase:firebase-firestore")

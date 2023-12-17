@@ -1,28 +1,21 @@
 package com.example.appaves;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import modelo.Entrada;
+import modelo.RegistroAves;
 
 public class Registro extends AppCompatActivity implements  View.OnClickListener {
     EditText edtAveVisualizada;
@@ -85,21 +78,21 @@ public class Registro extends AppCompatActivity implements  View.OnClickListener
             lugarAvistamiento = edtLugarExacto.getText().toString();
 
             //Invocamos método que agrega a firestore
-            agregarFirestore(fecha, aveVisualizada, numeroVistas, lugarAvistamiento);
+            agregarFirestore(aveVisualizada, numeroVistas, lugarAvistamiento,fecha);
         }
         if (view.getId() == R.id.btn_guardar){
-            Intent intento = new Intent(Registro.this,Menu.class);
+            Intent intento = new Intent(Registro.this,ListaActivity.class);
             startActivity(intento);
         }
 
     }
-    private void agregarFirestore(Date fecha, String aveVisualizada, int numeroVistas, String lugarAvistamiento) {
+    private void agregarFirestore(String aveVisualizada, int numeroVistas, String lugarAvistamiento,Date fecha) {
         //Colección en Firestore
-        CollectionReference coleccionEntradas = firebaseFirestore.collection("Entrada");
+        CollectionReference coleccionRegistroAves = firebaseFirestore.collection("RegistroAves");
         //Objeto Entrada
-        Entrada entrada = new Entrada(aveVisualizada, numeroVistas, lugarAvistamiento, fecha);
+        RegistroAves registroAves = new RegistroAves(aveVisualizada,numeroVistas,lugarAvistamiento,fecha);
         //intentamos agregar
-        coleccionEntradas.add(entrada).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+        coleccionRegistroAves.add(registroAves).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
                 //En caso de éxito mostramos mensaje mediante Toast
