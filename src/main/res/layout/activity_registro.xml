@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Registro">
 
+
     <ImageView
         android:id="@+id/img_registro"
         android:src="@drawable/note128x128"

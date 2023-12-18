@@ -2,12 +2,14 @@ package com.example.appaves;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -44,10 +46,12 @@ public class AvistamientosAdapter extends RecyclerView.Adapter<AvistamientosAdap
 
         // This line should be removed as it's redundant and can cause NullPointerException
         // holder.txv_fecha.setText(registroAves.getFecha().toString()); <-- Remove this line
-
-        holder.txv_numeroVistas.setText(String.valueOf(registroAves.getNumeroVistas()));
-        holder.txv_lugarAvistamiento.setText(registroAves.getLugarAvistamiento());
-    }
+        //Utilicé la clase ResourcesCompat para aplicar la fuente de mi app al listar los registros
+        Typeface typeface = ResourcesCompat.getFont(context, R.font.bree_serif_regular);
+        holder.txv_aveVisualizada.setTypeface(typeface);
+        holder.txv_fecha.setTypeface(typeface);
+        holder.txv_numeroVistas.setTypeface(typeface);
+        holder.txv_lugarAvistamiento.setTypeface(typeface);    }
 
     @Override
     public int getItemCount() {

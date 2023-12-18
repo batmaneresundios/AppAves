@@ -5,51 +5,77 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ActualizarActivity">
+    android:padding="16dp"
+    android:gravity="center">
+
+    <ImageView
+        android:src="@drawable/logo128x128"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="38dp"
+        android:layout_marginBottom="38dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/txv_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/bree_serif_regular"
+        android:text="Actualizar datos"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="#77D353"/>
 
     <EditText
         android:id="@+id/edt_ave_visualizada"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="aveVisualizada"
+        android:hint="Editar ave visualizada"
         android:inputType="text"
-        ></EditText>
+        android:layout_marginBottom="8dp"/>
+
     <EditText
         android:id="@+id/edt_fecha"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:hint="fecha"
+        android:hint="Editar fecha"
         android:inputType="text"
+        android:layout_marginBottom="8dp"/>
 
-        ></EditText>
     <EditText
         android:id="@+id/edt_numero_vistas"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:hint="numero_vistas"
+        android:hint="Editar número de vistas"
         android:lines="3"
         android:inputType="number"
+        android:layout_marginBottom="8dp"/>
 
-        ></EditText>
     <EditText
         android:id="@+id/edt_lugar_exacto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="lugar_exacto"
+        android:hint="Editar lugar exacto avistamiento"
         android:lines="3"
-        ></EditText>
+        android:layout_marginBottom="8dp"/>
 
     <Button
         android:id="@+id/btn_actualizar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
         android:text="Actualizar"
-        ></Button>
+        android:backgroundTint="#77D353"
+        android:layout_marginBottom="8dp"/>
+
     <Button
         android:id="@+id/btn_eliminar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Eliminar"
-        ></Button>
+        android:backgroundTint="#77D353"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
 
 </LinearLayout>

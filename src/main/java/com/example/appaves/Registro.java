@@ -96,7 +96,7 @@ public class Registro extends AppCompatActivity implements  View.OnClickListener
             @Override
             public void onSuccess(DocumentReference documentReference) {
                 //En caso de éxito mostramos mensaje mediante Toast
-                Toast.makeText(Registro.this,"Entrada registrada correctamente",Toast.LENGTH_SHORT).show();
+                Toast.makeText(Registro.this,"Registro ingresado correctamente",Toast.LENGTH_SHORT).show();
 
             }
         }).addOnFailureListener(new OnFailureListener() {

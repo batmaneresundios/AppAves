@@ -127,7 +127,9 @@ public class ActualizarActivity extends AppCompatActivity implements View.OnClic
                     @Override
                     public void onSuccess(Void aVoid) {
 
-                        Toast.makeText(ActualizarActivity.this, "Entrada Actulizada", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ActualizarActivity.this, "Registro Actulizado", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(ActualizarActivity.this, ListaActivity.class);
+                        startActivity(intent);
                     }
                 }).addOnFailureListener(new OnFailureListener() {
 
@@ -151,7 +153,7 @@ public class ActualizarActivity extends AppCompatActivity implements View.OnClic
 
                         if (task.isSuccessful()) {
 
-                            Toast.makeText(ActualizarActivity.this, "Entrada eliminada.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ActualizarActivity.this, "Registro eliminado.", Toast.LENGTH_SHORT).show();
                             Intent i = new Intent(ActualizarActivity.this, Menu.class);
                             startActivity(i);
                         } else {
